@@ -1,15 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
       // Данные о товарах
       const products = [
-        { id: 1, name: 'Смартфон', price: 29990, category: 'electronics', image: 'https://via.placeholder.com/300x200?text=Смартфон' },
-        { id: 2, name: 'Ноутбук', price: 54990, category: 'electronics', image: 'https://via.placeholder.com/300x200?text=Ноутбук' },
-        { id: 3, name: 'Наушники', price: 7990, category: 'electronics', image: 'https://via.placeholder.com/300x200?text=Наушники' },
-        { id: 4, name: 'Футболка', price: 1990, category: 'clothing', image: 'https://via.placeholder.com/300x200?text=Футболка' },
-        { id: 5, name: 'Джинсы', price: 3990, category: 'clothing', image: 'https://via.placeholder.com/300x200?text=Джинсы' },
-        { id: 6, name: 'Кофемашина', price: 24990, category: 'home', image: 'https://via.placeholder.com/300x200?text=Кофемашина' },
-        { id: 7, name: 'Пылесос', price: 8990, category: 'home', image: 'https://via.placeholder.com/300x200?text=Пылесос' },
-        { id: 8, name: 'Телевизор', price: 42990, category: 'electronics', image: 'https://via.placeholder.com/300x200?text=Телевизор' },
-        { id: 9, name: 'Куртка', price: 5990, category: 'clothing', image: 'https://via.placeholder.com/300x200?text=Куртка' }
+        { id: 1, name: 'Taxes & Efficiency', category: 'Business', image: './Media/Business.png' },
+        { id: 2, name: 'Investment banking',  category: 'Banking', image: './Media/Investment.jpg' },
+        { id: 3, name: 'Audit & Evaluation', category: 'Audit', image: './Media/Evaluation.png' },
+        { id: 4, name: 'Taxes & Efficiency', category: 'Business', image: './Media/Efficiency.png' },
+        { id: 5, name: 'Audit & Evaluation', category: 'Audit', image: './Media/Audit.jpg' },
+        { id: 6, name: 'Financial Plan', category: 'Finance', image: './Media/Finance.jpg' },
       ];
 
       // Элементы DOM
@@ -84,10 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         card.innerHTML = `
           <img src="${product.image}" alt="${product.name}">
-          <div class="info">
-            <h3>${product.name}</h3>
-            <p>Категория: ${product.category}</p>
-            <div class="price">${product.price.toLocaleString()} ₽</div>
+         
+          <div class="product__card--overlay">
+            <button class="product__card__button">+</button>
+            <div class="product__card__text">
+              <h3>${product.name}</h3>
+              <p>${product.category}</p>
+            </div>
           </div>
         `;
 
