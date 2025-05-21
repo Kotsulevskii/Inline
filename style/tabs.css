@@ -1,0 +1,149 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  font-family: 'Cabin', sans-serif;
+}
+
+/* Стили для навигационного меню */
+.nav__menu {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+
+  opacity: 0;
+  margin-top: -112px;
+  margin-bottom: 50px;
+  padding: 31px 44px;
+
+  background-color: #181818;
+  border-radius: 30px;
+  
+  font-family: 'Cabin', sans-serif;
+
+  transition: opacity .3s ease;
+  transition: margin .3s ease;
+}
+
+@media (min-width: 800px) {
+  .nav__menu {
+    opacity: 1;
+    margin-top: 0;
+
+    transition: opacity .3s ease;
+    transition: margin .3s ease;
+  }
+}
+
+.nav__menu button {
+  padding: 0;
+
+  background: none;
+  border-bottom: 2px #181818 solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 116%;
+
+  transition: all 0.3s ease;
+}
+
+.nav__menu button:hover {
+  color: #FFCC4A;
+
+  transition: all 0.3s ease;
+}
+
+.nav__menu button:focus-visible {
+  color: #FFCC4A;
+  outline: 1px #FFCC4A solid;
+
+  transition: all 0.3s ease;
+}
+
+.nav__menu button.active {
+  color: #FFCC4A;
+  border-bottom: 2px #FFCC4A solid;
+
+  transition: all 0.3s ease;
+}
+
+
+/* Стили для карточек в виде сетки */
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 25px;
+
+  margin-bottom: 110px;
+}
+
+@media (max-width: 800px) {
+  .products__grid {
+    display: none;
+  }
+}
+
+.product__card {
+  background-color: #181818;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.product__card:hover {
+  /*overlay for card*/
+}
+
+.product__card img {
+  width: 100%;
+  object-fit: cover;
+}
+/* мусор
+.product__card .info {
+  padding: 15px;
+}
+
+.product__card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.product__card p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.product__card .price {
+  font-weight: bold;
+  color: #4CAF50;
+  font-size: 20px;
+}
+*/
+/* Стили для слайдера на мобильных */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  display: none;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  .swiper-container {
+    display: block;
+  }
+}
+
+.swiper-slide {
+  overflow: hidden;
+}
+ 
+.swiper-button-next:after, .swiper-button-prev:after{
+  color: #181818;
+}
