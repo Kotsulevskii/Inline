@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./style/general.css">
-    <link rel="stylesheet" href="./style/tabs.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,13 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="./style/general.css">
+    <link rel="stylesheet" href="./style/tabs.css">
+    <link rel="stylesheet" href="./style/infoblock.css">
     <title>Inline</title>
 </head>
 <body>
 
     <section class="container">
-        <!-- Навигационное меню (фильтры) -->
+        <!-- Навигационное меню (фильтр) -->
         <nav class="nav__menu">
             <button class="filter__btn active" data-category="all">All</button>
             <button class="filter__btn" data-category="Business">Taxes & Efficiency</button>
@@ -33,9 +33,87 @@
         <!-- Контейнер для слайдера (мобильные) -->
         <div class="swiper-container">
             <div class="swiper-wrapper" id="swiperWrapper"></div>
-            <!-- Добавляем навигацию -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contact__section">
+            <!-- Блок с контактной информацией -->
+            <div class="contact__info">
+                <p class="contact__info--subtitle">Proccess</p>
+                <h2>Contact Us. It’s Easy.</h2>
+                <p class="contact__info--suptext">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative.</p>
+                
+                <div class="contact__details">
+                    <div class="contact__item">
+                        <img src="./Media/Tel.svg" alt="Телефон">
+                        <div>
+                            <h4>Call Today</h4>
+                            <p>+1 800 100 900</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact__item">
+                        <img src="./Media/Clock.svg" alt="Часы">
+                        <div>
+                            <h4>Monday To Friday</h4>
+                            <p>9AM - 5PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact__item">
+                        <img src="./Media/Nav.svg" alt="Навигация">
+                        <div>
+                            <h4>USA Office</h4>
+                            <p>195 Devonshire St Boston, MA 02110</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Форма обратной связи -->
+            <form id="feedbackForm" class="form-container" novalidate>
+                <div class="form-group">
+                    <div class="form-control">
+                        <label for="name">Имя*</label>
+                        <input type="text" id="name" name="name" required>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span class="error-message">Пожалуйста, введите ваше имя</span>
+                    </div>
+                    <div class="form-control">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span class="error-message">Пожалуйста, введите корректный email</span>
+                    </div>
+                    <div class="form-control">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" placeholder="+7 (123) 456-78-90">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span class="error-message">Формат: +7 (123) 456-78-90</span>
+                    </div>
+                    <div class="form-control">
+                        <label for="subject">Тема*</label>
+                        <input type="text" id="subject" name="subject" required>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span class="error-message">Пожалуйста, укажите тему сообщения</span>
+                    </div>
+                </div>
+                
+                <div class="form-control full-width">
+                    <label for="message">Сообщение*</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span class="error-message">Пожалуйста, введите ваше сообщение</span>
+                </div>
+                
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
         </div>
     </section>
 
@@ -43,6 +121,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="./JavaScript/tabs.js"></script>
+    <script src="./JavaScript/infoblock.js"></script>
 
 </body>
 </html>
