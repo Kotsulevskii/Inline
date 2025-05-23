@@ -210,8 +210,12 @@
     box-shadow: 0 0 0 3px #d8db3433;
 }
 
-
 @media (max-width: 800px) {
+    .contact__details {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     .form__group {
         gap: 15px;
         justify-content: center;
@@ -224,5 +228,9 @@
 
     .form__control--full{
         max-width: 400px;
+    }
+
+    .submit__btn{
+        margin: 28px auto 0 auto;
     }
 }

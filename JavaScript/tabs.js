@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     `;
-
     return card;
   }
 
@@ -93,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
     button.addEventListener('click', () => {
       filterButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
-      renderProducts(button.dataset.category);
+      renderProducts(button.dataset.category)
+    
     });
   });
 
@@ -103,6 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Инициализация
-  initSwiper();
+  initSwiper()
   renderProducts();
 });

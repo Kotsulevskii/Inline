@@ -32,11 +32,25 @@
         </nav>
 
         <!-- Контейнер для карточек в виде сетки (десктоп) -->
-        <div class="products__grid"></div>
+        <div class="products__grid">
+            <div class="product__card--placeholder"></div>
+            <div class="product__card--placeholder"></div>
+            <div class="product__card--placeholder"></div>
+            <div class="product__card--placeholder"></div>
+            <div class="product__card--placeholder"></div>
+            <div class="product__card--placeholder"></div>
+        </div>
 
         <!-- Контейнер для слайдера (мобильные) -->
         <div class="swiper-container">
-            <div class="swiper-wrapper" id="swiperWrapper"></div>
+            <div class="swiper-wrapper" id="swiperWrapper">
+                 <div class="swiper__wrapper--placeholder"></div>
+                <div class="swiper__wrapper--placeholder"></div>
+                <div class="swiper__wrapper--placeholder"></div>
+                <div class="swiper__wrapper--placeholder"></div>
+                <div class="swiper__wrapper--placeholder"></div>
+                <div class="swiper__wrapper--placeholder"></div>
+            </div>
         </div>
     </section>
     <!-- Блок с контактной информацией и формой обратной связи -->
@@ -79,29 +93,29 @@
                     <!-- Элементы input -->
                     <div class="form__control">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="john david" required>
-                        <span class="error__message">Please enter your name</span>
+                        <input type="text" id="name" name="name" maxlength="50" placeholder="john david" required>
+                        <span class="error__message"></span>
                     </div>
                     <div class="form__control">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="consult@mail.com" required>
-                        <span class="error__message">Please enter a valid email</span>
+                        <input type="email" id="email" name="email" maxlength="50"  placeholder="consult@mail.com" required>
+                        <span class="error__message"></span>
                     </div>
                     <div class="form__control">
                         <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" pattern="^\+\d{3}[\s\-]\d{3}[\s\-]\d{3}$" placeholder="+008 654 231">
-                        <span class="error__message">Format: +008 654 231</span>
+                        <input type="tel" id="phone" name="phone" maxlength="20" value="+7" pattern="^\d{3}[\s\-]\d{3}[\s\-]\d{4}$" placeholder="008 654 2311">
+                        <span class="error__message"></span>
                     </div>
                     <div class="form__control">
                         <label for="subject">Company(optional)</label>
-                        <input type="text" id="subject" name="subject" placeholder="yourcompany.com" required>
-                        <span class="error__message">Please indicate your company website</span>
+                        <input type="text" id="subject" name="subject" maxlength="50"  placeholder="yourcompany.com" required>
+                        <span class="error__message"></span>
                     </div>
                     <!-- Элемент textarea -->
                     <div class="form__control form__control--full">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Briefly tell us about your project and your current goals. How can we help you?" required></textarea>
-                        <span class="error__message">Please enter your message</span>
+                        <span class="error__message"></span>
                     </div>
                 </div>
                 

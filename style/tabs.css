@@ -88,6 +88,30 @@
   }
 }
 
+/* Стили для плейсхолдеров карточек */
+.product__card--placeholder, .swiper__wrapper--placeholder {
+  padding-bottom: 68%; /* Сохраняем квадратную форму */
+
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+ 
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@media (max-width: 800px) and (min-width: 650px) {
+  .swiper__wrapper--placeholder{
+    padding-bottom: 33%;
+  }
+}
+
+
+/* Анимация "пульсации" для индикации загрузки */
+@keyframes pulse {
+  0% { background-color: #e0e0e0; }
+  50% { background-color: #f0f0f0; }
+  100% { background-color: #e0e0e0; }
+}
 
 .product__card {
   position: relative;
