@@ -1,7 +1,8 @@
- 
+/* Код для валидации формы */ 
+
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('feedbackForm');
-    const inputs = form.querySelectorAll('input, textarea, select');
+    let form = document.querySelector('.form__container');
+    let inputs = form.querySelectorAll('input, textarea, select');
     
     // Валидация при вводе
     inputs.forEach(input => {
@@ -27,28 +28,28 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (isValid) {
             // Получаем данные формы
-            const formData = new FormData(form);
-            const data = {};
+            let formData = new FormData(form);
+            let data = {};
             formData.forEach((value, key) => {
                 data[key] = value;
             });
             
-            console.log('Данные формы:', data);
+            console.log('Form data:', data);
             
             // Очищаем форму после отправки
             form.reset();
             
             // Сбрасываем стили валидации
             inputs.forEach(input => {
-                const formControl = input.closest('.form-control');
+                let formControl = input.closest('.form__control');
                 formControl.classList.remove('success');
             });
             
             // Показываем сообщение об успешной отправке
-            alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
+            alert('Thank you! Your message has been sent. We will contact you shortly.');
         } else {
             // Прокрутка к первой ошибке
-            const firstError = form.querySelector('.error');
+            let firstError = form.querySelector('.error');
             if (firstError) {
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
@@ -57,26 +58,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Функция валидации поля
     function validateField(field) {
-        const formControl = field.closest('.form-control');
-        const errorMessage = formControl.querySelector('.error-message');
+        let formControl = field.closest('.form__control');
+        let errorMessage = formControl.querySelector('.error__message');
         
-        // Проверка на обязательное поле
+        
         if (field.required && !field.value.trim()) {
-            setError(formControl, errorMessage.textContent || 'Это поле обязательно для заполнения');
+            setError(formControl);
             return false;
         }
         
-        // Специальные проверки для разных типов полей
+       
         if (field.type === 'email' && field.value) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(field.value)) {
-                setError(formControl, 'Пожалуйста, введите корректный email');
+                setError(formControl);
                 return false;
             }
         }
         
         if (field.type === 'tel' && field.value && !field.checkValidity()) {
-            setError(formControl, 'Пожалуйста, введите корректный номер телефона');
+            setError(formControl);
             return false;
         }
         
@@ -85,9 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
     
-    function setError(element, message) {
-        const errorMessage = element.querySelector('.error-message');
-        errorMessage.textContent = message;
+    function setError(element) {
         element.classList.remove('success');
         element.classList.add('error');
     }

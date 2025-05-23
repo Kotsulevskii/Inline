@@ -75,6 +75,9 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 25px;
 
+  background-color: #F5F5F5;
+  border-radius: 30px;
+
   margin-bottom: 110px;
   padding: 25px;
 }
@@ -84,6 +87,7 @@
     display: none;
   }
 }
+
 
 .product__card {
   position: relative;
@@ -97,7 +101,7 @@
   height: 100%;
   object-fit: cover;
 }
-    /* Стили для высплывающей шторки на карточках */
+  /* Стили для высплывающей шторки на карточках */
 .product__card--overlay {
   position: absolute;
   top: 200%;
@@ -165,6 +169,7 @@
   height: 100%;
   display: none;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 @media (max-width: 800px) {

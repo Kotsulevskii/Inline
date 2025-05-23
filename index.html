@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./style/general.css">
     <link rel="stylesheet" href="./style/tabs.css">
     <link rel="stylesheet" href="./style/infoblock.css">
@@ -35,7 +39,7 @@
             <div class="swiper-wrapper" id="swiperWrapper"></div>
         </div>
     </section>
-
+    <!-- Блок с контактной информацией и формой обратной связи -->
     <section class="container">
         <div class="contact__section">
             <!-- Блок с контактной информацией -->
@@ -52,7 +56,6 @@
                             <p>+1 800 100 900</p>
                         </div>
                     </div>
-                    
                     <div class="contact__item">
                         <img src="./Media/Clock.svg" alt="Часы">
                         <div>
@@ -60,7 +63,6 @@
                             <p>9AM - 5PM</p>
                         </div>
                     </div>
-                    
                     <div class="contact__item">
                         <img src="./Media/Nav.svg" alt="Навигация">
                         <div>
@@ -72,47 +74,38 @@
             </div>
             
             <!-- Форма обратной связи -->
-            <form id="feedbackForm" class="form-container" novalidate>
-                <div class="form-group">
-                    <div class="form-control">
-                        <label for="name">Имя*</label>
-                        <input type="text" id="name" name="name" required>
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span class="error-message">Пожалуйста, введите ваше имя</span>
+            <form class="form__container" novalidate>
+                <div class="form__group">
+                    <!-- Элементы input -->
+                    <div class="form__control">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="john david" required>
+                        <span class="error__message">Please enter your name</span>
                     </div>
-                    <div class="form-control">
-                        <label for="email">Email*</label>
-                        <input type="email" id="email" name="email" required>
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span class="error-message">Пожалуйста, введите корректный email</span>
+                    <div class="form__control">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="consult@mail.com" required>
+                        <span class="error__message">Please enter a valid email</span>
                     </div>
-                    <div class="form-control">
-                        <label for="phone">Телефон</label>
-                        <input type="tel" id="phone" name="phone" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" placeholder="+7 (123) 456-78-90">
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span class="error-message">Формат: +7 (123) 456-78-90</span>
+                    <div class="form__control">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" pattern="^\+\d{3}[\s\-]\d{3}[\s\-]\d{3}$" placeholder="+008 654 231">
+                        <span class="error__message">Format: +008 654 231</span>
                     </div>
-                    <div class="form-control">
-                        <label for="subject">Тема*</label>
-                        <input type="text" id="subject" name="subject" required>
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span class="error-message">Пожалуйста, укажите тему сообщения</span>
+                    <div class="form__control">
+                        <label for="subject">Company(optional)</label>
+                        <input type="text" id="subject" name="subject" placeholder="yourcompany.com" required>
+                        <span class="error__message">Please indicate your company website</span>
+                    </div>
+                    <!-- Элемент textarea -->
+                    <div class="form__control form__control--full">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Briefly tell us about your project and your current goals. How can we help you?" required></textarea>
+                        <span class="error__message">Please enter your message</span>
                     </div>
                 </div>
                 
-                <div class="form-control full-width">
-                    <label for="message">Сообщение*</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <span class="error-message">Пожалуйста, введите ваше сообщение</span>
-                </div>
-                
-                <button type="submit" class="submit-btn">Отправить</button>
+                <button type="submit" class="submit__btn">Send Message</button>
             </form>
         </div>
     </section>

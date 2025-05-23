@@ -2,6 +2,10 @@
 .contact__section {
     display: flex;
     justify-content: space-between;
+
+    font-family: 'Lato', sans-serif;
+    line-height: 148%;
+    color: #181818;
 }
 
 @media (max-width: 768px) {
@@ -11,9 +15,7 @@
 }
 
 .contact__info {
-    width: 35%;
-   
-    color: #181818;
+    flex: 1 1 100%;
 }
 
 .contact__info--subtitle {
@@ -23,8 +25,7 @@
 
     border-radius: 20px;
     background-color: #FFCC4A;
-    font-family: 'Lato', sans-serif;
-    line-height: 148%;
+
     letter-spacing: 0.15em;
     text-transform: uppercase;
 }
@@ -40,8 +41,6 @@
 .contact__info--suptext {
     margin: 0;
 
-    font-family: 'Lato', sans-serif;
-    line-height: 148%;
     color: #595566;
 }
 
@@ -66,8 +65,6 @@
 .contact__item div h4 {
     margin: 0 0 3px 0;
 
-    font-family: 'Lato', sans-serif;
-    line-height: 148%;
     color: #595566;
 }
 
@@ -81,158 +78,151 @@
 }
 
 /* Стили для формы */
-.form-container {
-    width: 60%;
+.form__container {
+    flex: 2 1 100%;
 }
 
-.form-group {
+.form__group {
     display: flex;
     flex-wrap: wrap;
     gap: 24px 28px;
 }
 
-.form-control {
+.form__control {
     flex: 1 1 0;
+    max-width: 400px;
     min-width: 200px;
-    position: relative;
 }
 
-.form-control label {
+.form__control label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 600;
-    color: #2c3e50;
 }
 
-.form-control input,
-.form-control textarea,
-.form-control select {
+.form__control input,
+.form__control textarea {
+    box-sizing: border-box;
     width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 22px 33px;
+    border: 1px solid #C1C1C1;
+    border-radius: 54px;
+   
     transition: all 0.3s ease;
 }
 
-/* Стили для hover */
-.form-control input:hover,
-.form-control textarea:hover,
-.form-control select:hover {
+.form__control textarea {
+    border-radius: 22px;
+}
+
+.form__control--full{
+    max-width: none;
+}
+ 
+.form__control input::placeholder,
+.form__control textarea::placeholder {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 148%;
+    color: #A9A9A9;
+}
+
+.form__-control input:hover,
+.form__control textarea:hover {
     border-color: #95a5a6;
 }
 
-/* Стили для focus */
-.form-control input:focus,
-.form-control textarea:focus,
-.form-control select:focus {
+.form__control input:focus,
+.form__control textarea:focus {
     outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    border-color: #FFCC4A;
+    box-shadow: 0 0 0 3px #d8db3433;
 }
 
-/* Стили для active */
-.form-control input:active,
-.form-control textarea:active,
-.form-control select:active {
-    border-color: #2980b9;
+.form__control input:active,
+.form__control textarea:active {
+    border-color: #FFCC4A;
 }
 
-.form-control textarea {
+.form__control textarea {
     min-height: 120px;
-    resize: vertical;
-}
-
-.full-width {
-    flex: 1 1 100%;
-}
-
-.submit-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 14px 30px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: block;
-    margin: 30px auto 0;
-    width: 200px;
-}
-
-/* Состояния кнопки */
-.submit-btn:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.submit-btn:active {
-    background-color: #2472a4;
-    transform: translateY(0);
-    box-shadow: none;
-}
-
-.submit-btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+    resize: none;
 }
 
 /* Стили для валидации */
-.form-control.success input,
-.form-control.success textarea,
-.form-control.success select {
+.form__control.success input,
+.form__control.success textarea {
     border-color: #2ecc71;
 }
 
-.form-control.error input,
-.form-control.error textarea,
-.form-control.error select {
+.form__control.error input,
+.form__control.error textarea {
     border-color: #e74c3c;
 }
 
-.error-message {
+.error__message {
+    display: none;
+    
     color: #e74c3c;
     font-size: 14px;
-    margin-top: 5px;
-    display: none;
 }
 
-.form-control.error .error-message {
+.form__control.error .error__message {
     display: block;
 }
 
-/* Иконки валидации */
-.form-control {
-    position: relative;
+/* Стили для кнопки формы*/
+.submit__btn {
+    display: block;
+    margin: 28px auto 0 0;
+    width: 200px;
+
+    background-color: #181818;
+    border: none;
+    border-radius: 42px;
+
+    padding: 16px 27px;
+    
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 160%;
+    color: #fff;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
 }
 
-.form-control i {
-    position: absolute;
-    top: 38px;
-    right: 10px;
-    visibility: hidden;
+.submit__btn:hover {
+    background-color: #FFCC4A;
+    color: #181818;
+
+    transform: translateY(-2px);
 }
 
-.form-control.success i.fa-check-circle {
-    color: #2ecc71;
-    visibility: visible;
+.submit__btn:active {
+    background-color: #FFCC4A;
+    transform: translateY(0);
 }
 
-.form-control.error i.fa-exclamation-circle {
-    color: #e74c3c;
-    visibility: visible;
+.submit__btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #d8db3433;
 }
 
-@media (max-width: 768px) {
-    .form-group {
-        flex-direction: column;
+
+@media (max-width: 800px) {
+    .form__group {
         gap: 15px;
+        justify-content: center;
+        margin-top: 15px;
     }
     
-    .form-control {
+    .form__control {
         flex: 1 1 100%;
+    }
+
+    .form__control--full{
+        max-width: 400px;
     }
 }

@@ -1,5 +1,7 @@
+/* Код для отображения карточек */
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Данные о товарах
+  // Данные для карточек
   let products = [
     { id: 1, name: 'Taxes & Efficiency', category: 'Business', image: './Media/Business.png' },
     { id: 2, name: 'Investment banking',  category: 'Banking', image: './Media/Investment.jpg' },
@@ -9,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     { id: 6, name: 'Financial Plan', category: 'Finance', image: './Media/Finance.jpg' },
   ];
 
-  // Элементы DOM
+  
   let productsGrid = document.querySelector('.products__grid');
   let swiperWrapper = document.getElementById('swiperWrapper');
   let filterButtons = document.querySelectorAll('.filter__btn');
